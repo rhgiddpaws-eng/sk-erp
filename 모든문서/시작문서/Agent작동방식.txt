@@ -1,0 +1,11 @@
+- 모든 이후 생성문서는 모든문서/결과문서 폴더에 생성한다.
+- 로컬의 도커데스트탑 시스템을 이용하며 관련 도커관련 문서는 
+  모든문서/docker-compose/postgres 폴더를 참조한다. 
+- 프로젝트요구사항.txt 파일의 작업목록은 모든문서/tasks.md 의 phase 단위가 돤다.  
+- tasks.md 파일은 phase 별로 세부 task로 구성되며 subagent가 phase별로 할당되며
+  subagent가 task 작업 완료후 main agent에게 보고한다. 
+- subagent가 작성한 코드가 300 라인이 넘어가면 main agent가 검토후 남은 작업내용을
+  분할하여 다른 subagent에게 재할당한다.
+- 작업을 완성한 subagent는 main agent에게 보고하고 main agent는 작업을 검토후
+  tasks.md 파일의 해당 사항을 체크하고 해당 subagent를 삭제한다. 
+- main agent는 모든문서/tasks.md 파일의 모든 사항이 체크되면 프로젝트를 완료 보고한다. 
